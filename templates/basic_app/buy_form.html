@@ -1,0 +1,14 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+<h1>Buy Stocks of a Company</h1>
+<h3>Note that this will automatically sell the previously owned stocks and then perform the buy operation</h3>
+<div class="container">
+  <form method="POST">
+      {{data.as_p}}
+      {% csrf_token %}
+    <input type="submit" class="btn btn-primary" value="Buy">
+  </form>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+<h1>Hi {{ user.username }}!!</h1>
+<h1>Details Regarding all Stocks listed in the Stock Market</h1>
+<br>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Stock Symbol</th>
+      <th scope="col">Previous Days Close Price</th>
+      <th scope="col">Opening Price</th>
+      <th scope="col">High</th>
+      <th scope="col">Low</th>
+      <th scope="col">Last Traded Price</th>
+        <th scope="col">No. of trades today</th>
+        <th scope="col">Percentage Increase</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d1 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+        <td>{{ row.1 }}</td>
+        <td>{{ row.2 }}</td>
+        <td>{{ row.3 }}</td>
+        <td>{{ row.4 }}</td>
+        <td>{{ row.5 }}</td>
+        <td>{{ row.6 }}</td>
+        <td>{{ row.7 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<!-- {{ d1 }} -->
+<h1>Details Regarding Companies Related to the Stocks in the Market</h1>
+<br>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Market Capitalization(in CRORE)</th>
+      <th scope="col">Industry</th>
+      <th scope="col">Stock Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d2 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+        <td>{{ row.1 }}</td>
+        <td>{{ row.2 }}</td>
+        <td>{{ row.3 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<br>
+<br>
+<!-- <a href="{% url 'basic_app:form1' %}">to trade</a> -->
+<a href="{% url 'basic_app:form1' %}" type="button" class="btn btn-primary">Sell Shares/Trade</a>
+<br>
+<br>
+
+<!-- <a href="{% url 'basic_app:price_visuals' %}">Plots of maximum price reached in day of all stocks over a period of time</a> -->
+<!-- <a href="{% url 'basic_app:price_visuals' %}" type="button" class="btn btn-primary">Plots of maximum price reached in day of all stocks over a period of time</a> -->
+<br>
+<br>
+<a href="{% url 'basic_app:more_details' %}" type="button" class="btn btn-primary">Some more Details</a></a>
+<br>
+<br>
+<a href="{% url 'basic_app:search_by' %}" type="button" class="btn btn-primary">Search by name</a>
+<br>
+<br>
+<a href="{% url 'basic_app:search_price' %}" type="button" class="btn btn-primary">Search by price range</a>
+<br>
+<br>
+{% endblock %}

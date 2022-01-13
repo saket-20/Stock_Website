@@ -1,0 +1,63 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+  <h1>Welcome!! {{ user.username }}</h1>
+  USER ID:
+  {% for row in data2 %}
+    {{ row.0 }}
+  {% endfor %}
+    <br>
+    <h2>List of Stocks Owned:</h2>
+    <br>
+    <!-- {{ data1 }} -->
+    <!-- <ol>
+  {% for row in data1 %}
+    <li>{{ row.0 }} </li>
+  {% endfor %}
+    </ol>
+    <br> -->
+
+      <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">No. of Shares Owned</th>
+      <th scope="col">Prev Day Close Price</th>
+      <th scope="col">Open Price</th>
+      <th scope="col">High</th>
+      <th scope="col">Low</th>
+      <th scope="col">Last Selling Price</th>
+      <th scope="col">Volume bought/sold today</th>
+      <th scope="col">Percentage Increase</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in data1 %}
+      <tr>
+        <td>{{ row.1 }}</td>
+        <td>{{ row.2 }}</td>
+        <td>{{ row.4 }}</td>
+        <td>{{ row.5 }}</td>
+        <td>{{ row.6 }}</td>
+        <td>{{ row.7 }}</td>
+        <td>{{ row.8 }}</td>
+        <td>{{ row.9 }}</td>
+        <td>{{ row.10 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<!-- <a href="{% url 'basic_app:allstocks'   %}">View details regarding all Stocks and Companies</a>
+<br> -->
+<a href="{% url 'basic_app:allstocks'   %}" type="button" class="btn btn-primary" >View details regarding all Stocks and Companies</a>
+<!-- <a href="{% url 'basic_app:buy_form'   %}">Click to Buy Stocks</a> -->
+<br>
+<br>
+<br>
+<a href="{% url 'basic_app:buy_form'   %}" type="button" class="btn btn-primary">Buy a Stock</a>
+<br>
+<br>
+
+<a href="{% url 'basic_app:sellform'   %}" type="button" class="btn btn-primary">Sell a Stock</a>
+
+{% endblock %}

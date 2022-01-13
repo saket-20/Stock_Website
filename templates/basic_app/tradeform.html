@@ -1,0 +1,14 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+    <h1>Trade:</h1>
+    <h3>This will sell a certain number of stocks owned(of a particular company) as specified by the user</h3>
+    <div class="container">
+      <form method="POST">
+          {{form.as_p}}
+          {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </form>
+
+
+    </div>
+{% endblock %}

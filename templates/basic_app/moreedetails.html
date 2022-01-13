@@ -1,0 +1,118 @@
+{% extends "basic_app/base.html" %}
+{% block body_block %}
+
+<h1>More Details</h1>
+<h2>Company with the highest Market Capitalization(in CRORE)</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d1 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Opening Share price for the Company with the highest Market Capitalization</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Share Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d3 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Stock with highest opening price</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Stock Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d2 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Most traded stock:</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Stock Symbol</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d4 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Stock with the highest Percentage Increase</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Stock Symbol</th>
+      <th scope="col">Percentage Increase</th>
+      <th scope="col">Industry</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d5 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+        <td>{{ row.1 }}</td>
+        <td>{{ row.2 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Highest Percentage Increase in price by Industry</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Highest Percentage Increase</th>
+      <th scope="col">Industry</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d6 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+        <td>{{ row.1 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h2>Stocks Sorted by Percentage Increase in price</h2>
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Percentage Increase</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in d7 %}
+      <tr>
+        <td>{{ row.0 }}</td>
+        <td>{{ row.1 }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
